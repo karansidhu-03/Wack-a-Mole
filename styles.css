@@ -1,0 +1,100 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Style the headers */
+h3 {
+    color: #333;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+h3 span {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Grid container styling */
+.grid {
+    width: 606px; /* 3 squares of 200px + 6px borders */
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ddd;
+    border: 3px solid #333;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Square styling */
+.square {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Add hover effect for squares */
+/* .square:hover {
+    background-color: #f1f1f1;
+} */
+
+/* Mole class to be added dynamically with JavaScript */
+.mole {
+   
+    background-image: url('mole.png'); /* Add your mole image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive design */
+@media (max-width: 620px) {
+    .grid {
+        width: 303px; /* 3 squares of 100px + 3px borders */
+        height: 303px;
+    }
+    
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+}
+
+.mole.clicked {
+    background-color: rgba(46, 204, 113, 0.6);
+    /* Green overlay effect */
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
